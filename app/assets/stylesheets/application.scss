@@ -5,3 +5,11 @@
 @import "font-awesome";
 @import "components/*";
 
+.vl {
+  border-left: 1px solid grey;
+  height: 800px;
+  position: absolute;
+  left: 30%;
+  margin-left: -3px;
+  top: 65px;
+}

@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #lazy user creation
 gem 'devise'
-gem 'faker'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 #Front end gem
 gem "font-awesome-rails"
 gem 'bootstrap', '~> 4.3.1'

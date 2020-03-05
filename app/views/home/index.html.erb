@@ -3,14 +3,15 @@
 <div class="container">
   <ul>
   <% @categories.each do  |category|%>
-  <li><%= category.title  %></li>
+  <li id="category" ><%= category.title  %></li>
   <div class="card">
-    <ul>
+    <ul id="<%=category.title%>">
       <% category.tasks.each do |task|  %>
-      <li>
+      <li id="<%=task.id%>">
         <%= task.title  %>
         <% unless task.deadline.nil? %>
           , to read: <%= task.deadline.strftime('%D')  %>
+           <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, { controller: :tasks, action: :destroy, id: task.id }, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>  
         <% end %>
       </li>
       <% end %>
