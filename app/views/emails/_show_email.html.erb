@@ -1,0 +1,8 @@
+
+<div class="container">
+<h2>  <th scope="col">Object : <%=email.object %>  </th> </h2> <br> 
+ Body  : <%=email.body %>  
+
+ <%= link_to('Supprimer', email_path(@email), method: :delete, class:"btn btn-danger btn-sm mr-2", remote: true) %>
+  <%= link_to('Marquer comme non-lu', email_path(@email), method: :put, class:"btn btn-secondary btn-sm", remote: true) %>
+</div>

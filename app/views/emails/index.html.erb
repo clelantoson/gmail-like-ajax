@@ -1,25 +1,24 @@
 <div class="container">
 
-
 <%= link_to "Recevoir un email", emails_path, method: :post, class: "btn btn-primary btn-sm", remote: true %>
 
-
   <table class="table table-bordered">
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Email list</th>
-        <th scope="col">Selected email</th>
+        <th scope="col">Selected Email</th>
       </tr>
     </thead>
-
     <tbody id="email-list">
       <% @emails.each do |email|  %>
-      
-     <tr>
-     <td id="<%=email.id%>"> Object : <%=email.object %>,</td>
-    <tr>
+      <tr id="whole <%= email.id %>">
+          <td id="email-object"> 
+            Object : <%= link_to email.object, email_path(email), method: :get, remote: true %>
+          </td>
+        <td id="<%= email.id %>"> 
+        </td>
+      </tr>
       <% end %>
-
     </tbody>
   </table>
 </div> 
